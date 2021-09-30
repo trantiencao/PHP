@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điền thông tin</title>
+</head>
+<body>
+    <form action="config.php" method="POST">
+        <fieldset style="width: 550px;">
+            <legend>Enter your information</legend> 
+            <table>
+                <tr>
+                    <td>Họ tên: </td>
+                    <td><input type="text" name="name" value="" size="50"/></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ: </td>
+                    <td><input type="text" name="address" value="" size="50"/></td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại: </td>
+                    <td><input type="text" name="phoneNumber" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Giới tính: </td>
+                    <td>Nam<input type="radio" name="sex" value="male"/>
+                        Nữ<input type="radio" name="sex" value="female"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quốc tịch: </td>
+                    <td>
+                        <select name="nationality">
+                            <option value="Mỹ">Mỹ</option>
+                            <option value="Anh">Anh</option>
+                            <option value="Trung Quốc">Trung Quốc</option>
+                            <option selected value="Việt Nam">Việt Nam</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Các môn đã học: </td>
+                    <td>
+                        <input type="checkbox" name="mh1" value="PHP & My SQL"/>PHP & My SQL
+                        <input type="checkbox" name="mh2" value="C#"/>C#
+                        <input type="checkbox" name="mh3" value="XML"/>XML
+                        <input type="checkbox" name="mh4" value="Python"/>Python
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ghi chú: </td>
+                    <td><textarea name="note" rows="5" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="send" value="Gửi" />
+                        <input type="reset" name="rs" value="Hủy"> 
+                    </td>    
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
