@@ -21,8 +21,8 @@
 </head>
 <body>
     <?php 
-        // define('donGia',20000);
-        const donGia = 20000; 
+        
+        const donGia = 20000; // = define('donGia',20000);
         // Để thông báo cho server nhận dữ liệu từ POST khi có,
         // thì chúng ta chỉ cần sử dụng $_POST,
         // đây là một biến toàn cục lưu trữ dưới dạng mảng bất tuần tự.
