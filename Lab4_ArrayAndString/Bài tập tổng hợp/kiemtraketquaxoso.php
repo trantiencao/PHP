@@ -8,34 +8,41 @@ Sử dụng hàm và mảng để xử lý.
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xổ số kiến thiết</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-        body {
-            text-align: center;
-        }
-        table {
-            width: 500px;
-            margin: 0 auto;
-        }
-        td {
-            border: 1px solid rgba(0, 0, 0, 0.2);
-        }
-        td:first-of-type {
-            padding: 10px;
-            width: 100px;
-        }
-        .red {
-            color: red;
-        }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    table {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    td {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    td:first-of-type {
+        padding: 10px;
+        width: 100px;
+    }
+
+    .red {
+        color: red;
+    }
     </style>
 </head>
+
 <body>
     <?php
 	    $xs = $_POST['xs'];
@@ -46,7 +53,7 @@ Sử dụng hàm và mảng để xử lý.
             global $kq;
 
             for($i = 1; $i <= $n; $i++){
-		//tạo số cho các giải
+		        //tạo số cho các giải
                 $rd = str_pad(rand(1,pow(10,$m)-1),$m,"0",STR_PAD_LEFT); 
                 echo "<h3>" . $rd . "</h3>";
 
@@ -55,6 +62,7 @@ Sử dụng hàm và mảng để xử lý.
                     array_push($kq, $giai);
                 }
             }
+            return $temp;
         }
     ?>
 
@@ -100,16 +108,17 @@ Sử dụng hàm và mảng để xử lý.
         </tr>
     </table>
     <h3>Vé số của bạn là: <span class="red"> <?php echo $xs; ?> </span>
-    <?php 
+        <?php 
         if (count($kq) == 0) 
         {
             echo "<h2>Chúc bạn may mắn lần sau...</h2>";
         } else {
-            echo "<h2>Chúc mừng bạn đã trúng " . count($kq) . " giải: ";
+            echo "<h2>Chúc mừng bạn đã trúng " . $temp . " giải: ";
             foreach ($kq as $item) {
                 echo $item;
             }
         }
     ?>
 </body>
+
 </html>

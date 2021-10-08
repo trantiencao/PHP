@@ -84,7 +84,7 @@ Dựa trên Bài tập 1 - Phần bài tập khởi động, SV bổ sung thêm 
         }
         public function tinh_DT()
         {
-            return (pow($this->dodai, 2)*sqrt(3))/4;
+            return (pow($this->dodai, 2) * sqrt(3)) / 4;
         }
     }
     class HinhTamGiac extends Hinh
@@ -95,7 +95,7 @@ Dựa trên Bài tập 1 - Phần bài tập khởi động, SV bổ sung thêm 
         }
         public function tinh_DT()
         {
-            return (pow($this->dodai, 2)*sqrt(3))/4;
+            return (pow($this->dodai, 2) * sqrt(3)) / 4;
         }
     }
     class HinhChuNhat extends Hinh
