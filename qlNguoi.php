@@ -68,6 +68,16 @@ class SinhVien extends Nguoi
 {
     private $lopHoc, $nganhHoc;
 
+    //Version 2: Update construct
+    public function __construct($hoTen,$diaChi,$gioiTinh,$lopHoc,$nganhHoc)
+    {
+        $this->hoTen = $hoTen;
+        $this->diaChi = $diaChi;
+        $this->gioiTinh = $gioiTinh;
+        $this->lopHoc = $lopHoc;
+        $this->nganhHoc = $nganhHoc;
+    }
+
     /**
      * Get the value of lopHoc
      */
@@ -108,11 +118,11 @@ class SinhVien extends Nguoi
         return $this;
     }
 
-    public function tinhDiemThuong($nganh)
+    public function tinhDiemThuong($nganhHoc)
     {
-        if ($nganh == "cntt") {
+        if ($nganhHoc == "công nghệ thông tin") {
             return 1;
-        } else if ($nganh == "kt") {
+        } else if ($nganhHoc == "kinh tế") {
             return 1.5;
         } else return 0;
     }
@@ -122,6 +132,15 @@ class GiangVien extends Nguoi
 {
     private $trinhDo;
     private const luongCoBan = 1500000;
+
+    //Version 2: Update construct
+    public function __construct($hoTen,$diaChi,$gioiTinh,$trinhDo)
+    {
+        $this->hoTen = $hoTen;
+        $this->diaChi = $diaChi;
+        $this->gioiTinh = $gioiTinh;
+        $this->trinhDo = $trinhDo;
+    }
 
     /**
      * Get the value of trinhDo
@@ -145,9 +164,9 @@ class GiangVien extends Nguoi
 
     public function tinhLuong($trinhdo)
     {
-        if ($trinhdo == "cn") {
+        if ($trinhdo == "cử nhân") {
             return self::luongCoBan * 2.34;
-        } else if ($trinhdo == "ths") {
+        } else if ($trinhdo == "thạc sĩ") {
             return self::luongCoBan * 3.67;
         } else return self::luongCoBan * 5.66;
     }
@@ -156,13 +175,19 @@ class GiangVien extends Nguoi
 $info = "";
 if (isset($_POST["showInfo"])) {
     switch ($loaiDoiTuong = $_POST["loaiDoiTuong"]) {
-        case "sv": {
+        case "sinh viên": {
+                //Version 1
+                /*
                 $addSv = new SinhVien();
                 $addSv->setHoTen($_POST["hoTen"]);
-                $addSv->setGioiTinh($_POST["gioiTinh"]);
                 $addSv->setDiaChi($_POST["diaChi"]);
+                $addSv->setGioiTinh($_POST["gioiTinh"]);
                 $addSv->setLopHoc($_POST["lopHoc"]);
                 $addSv->setNganhHoc($_POST["nganhHoc"]);
+                */
+
+                //Version 2: Update construct
+                $addSv = new SinhVien($_POST["hoTen"],$_POST["diaChi"],$_POST["gioiTinh"],$_POST["lopHoc"],$_POST["nganhHoc"]);
 
                 $info .= "Họ tên: ".$addSv->getHoTen()."\n".
                 "Giới tính: ".$addSv->getGioiTinh()."\n".
@@ -172,12 +197,18 @@ if (isset($_POST["showInfo"])) {
                 "Điểm thưởng: ".$addSv->tinhDiemThuong($addSv->getNganhHoc());
             }
             break;
-        case "gv": {
+        case "giảng viên": {
+                //Version 1
+                /*
                 $addGv = new GiangVien();
                 $addGv->setHoTen($_POST["hoTen"]);
-                $addGv->setGioiTinh($_POST["gioiTinh"]);
                 $addGv->setDiaChi($_POST["diaChi"]);
+                $addGv->setGioiTinh($_POST["gioiTinh"]);
                 $addGv->setTrinhDo($_POST["trinhDo"]);
+                */
+
+                //Version 2: Update construct
+                $addGv = new GiangVien($_POST["hoTen"],$_POST["diaChi"],$_POST["gioiTinh"],$_POST["trinhDo"]);
 
                 $info .= "Họ tên: ".$addGv->getHoTen()."\n".
                 "Giới tính: ".$addGv->getGioiTinh()."\n".
@@ -208,8 +239,8 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Chọn đối tượng: </td>
                 <td>
-                    <input type="radio" name="loaiDoiTuong" value="sv" <?php if (isset($_POST['loaiDoiTuong']) && ($_POST['loaiDoiTuong']) == "sv") echo 'checked' ?> /> Sinh viên
-                    <input type="radio" name="loaiDoiTuong" value="gv" <?php if (isset($_POST['loaiDoiTuong']) && ($_POST['loaiDoiTuong']) == "gv") echo 'checked' ?> /> Giảng viên
+                    <input type="radio" name="loaiDoiTuong" value="sinh viên" <?php if (isset($_POST['loaiDoiTuong']) && ($_POST['loaiDoiTuong']) == "sinh viên") echo 'checked' ?> /> Sinh viên
+                    <input type="radio" name="loaiDoiTuong" value="giảng viên" <?php if (isset($_POST['loaiDoiTuong']) && ($_POST['loaiDoiTuong']) == "giảng viên") echo 'checked' ?> /> Giảng viên
                 </td>
             </tr>
             <tr>
@@ -220,7 +251,7 @@ if (isset($_POST["showInfo"])) {
                 <td>Giới tính: </td>
                 <td>
                     <input type="radio" name="gioiTinh" value="nam" <?php if (isset($_POST['gioiTinh']) && ($_POST['gioiTinh']) == "nam") echo 'checked' ?> />Nam
-                    <input type="radio" name="gioiTinh" value="nu" <?php if (isset($_POST['gioiTinh']) && ($_POST['gioiTinh']) == "nu") echo 'checked' ?> />Nữ
+                    <input type="radio" name="gioiTinh" value="nữ" <?php if (isset($_POST['gioiTinh']) && ($_POST['gioiTinh']) == "nữ") echo 'checked' ?> />Nữ
                 </td>
             </tr>
             <tr>
@@ -230,9 +261,9 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Trình độ: </td>
                 <td>
-                    <input type="radio" name="trinhDo" value="cn" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "cn") echo 'checked' ?> /> Cử nhân
-                    <input type="radio" name="trinhDo" value="ths" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "ths") echo 'checked' ?> /> Thạc sĩ
-                    <input type="radio" name="trinhDo" value="ts" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "ts") echo 'checked' ?> /> Tiến sĩ
+                    <input type="radio" name="trinhDo" value="cử nhân" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "cử nhân") echo 'checked' ?> /> Cử nhân
+                    <input type="radio" name="trinhDo" value="thạc sĩ" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "thạc sĩ") echo 'checked' ?> /> Thạc sĩ
+                    <input type="radio" name="trinhDo" value="tiến sĩ" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "tiến sĩ") echo 'checked' ?> /> Tiến sĩ
                 </td>
             </tr>
             <tr>
@@ -242,9 +273,9 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Ngành học: </td>
                 <td>
-                    <input type="radio" name="nganhHoc" value="cntt" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "cntt") echo 'checked' ?> /> CNTT
-                    <input type="radio" name="nganhHoc" value="kt" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "kt") echo 'checked' ?> /> Kinh Tế
-                    <input type="radio" name="nganhHoc" value="nganhkhac" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "nganhkhac") echo 'checked' ?> /> Ngành khác
+                    <input type="radio" name="nganhHoc" value="công nghệ thông tin" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "công nghệ thông tin") echo 'checked' ?> /> CNTT
+                    <input type="radio" name="nganhHoc" value="kinh tế" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "kinh tế") echo 'checked' ?> /> Kinh Tế
+                    <input type="radio" name="nganhHoc" value="ngành khác" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "ngành khác") echo 'checked' ?> /> Ngành khác
                 </td>
             </tr>
 
