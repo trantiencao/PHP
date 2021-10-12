@@ -69,7 +69,7 @@ class SinhVien extends Nguoi
     private $lopHoc, $nganhHoc;
 
     //Version 2: Update construct
-    public function __construct($hoTen,$diaChi,$gioiTinh,$lopHoc,$nganhHoc)
+    public function construct($hoTen,$diaChi,$gioiTinh,$lopHoc,$nganhHoc)
     {
         $this->hoTen = $hoTen;
         $this->diaChi = $diaChi;
@@ -134,7 +134,7 @@ class GiangVien extends Nguoi
     private const luongCoBan = 1500000;
 
     //Version 2: Update construct
-    public function __construct($hoTen,$diaChi,$gioiTinh,$trinhDo)
+    public function construct($hoTen,$diaChi,$gioiTinh,$trinhDo)
     {
         $this->hoTen = $hoTen;
         $this->diaChi = $diaChi;
