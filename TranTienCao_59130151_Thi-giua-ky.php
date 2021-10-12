@@ -168,8 +168,8 @@ class NhanVienPhucVu extends Nguoi {
     
     public function tinhThuong() {
         if ($this->soNgayCong >= 28 && $this->soNgayCong <=30) {
-            return 50000;
-        } elseif ($this->soNgayCong <28) return 40000;
+            return 50000*$this->soNgayCong;
+        } elseif ($this->soNgayCong <28) return 40000*$this->soNgayCong;
     }
 }
 
