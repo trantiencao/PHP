@@ -172,7 +172,7 @@
 			foreach ($errors as $msg) {
 				echo "- $msg<br /><\n>";
 			}
-			echo "</p><p>Hãy thử lại.</p>";
+			echo "</p><p>Hãy thử lại.</p>"; 
 		}
 	}
 	mysqli_close($dbc);
