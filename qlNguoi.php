@@ -239,8 +239,8 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Chọn đối tượng: </td>
                 <td>
-                    <input type="radio" name="loaiDoiTuong" value="sinh viên" <?php if (isset($_POST['loaiDoiTuong']) && ($_POST['loaiDoiTuong']) == "sinh viên") echo 'checked' ?> /> Sinh viên
-                    <input type="radio" name="loaiDoiTuong" value="giảng viên" <?php if (isset($_POST['loaiDoiTuong']) && ($_POST['loaiDoiTuong']) == "giảng viên") echo 'checked' ?> /> Giảng viên
+                    <input type="radio" name="loaiDoiTuong" value="sinh viên" <?php if (isset($_POST['loaiDoiTuong']) && $_POST['loaiDoiTuong'] == "sinh viên") echo 'checked' ?> /> Sinh viên
+                    <input type="radio" name="loaiDoiTuong" value="giảng viên" <?php if (isset($_POST['loaiDoiTuong']) && $_POST['loaiDoiTuong'] == "giảng viên") echo 'checked' ?> /> Giảng viên
                 </td>
             </tr>
             <tr>
@@ -250,8 +250,8 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Giới tính: </td>
                 <td>
-                    <input type="radio" name="gioiTinh" value="nam" <?php if (isset($_POST['gioiTinh']) && ($_POST['gioiTinh']) == "nam") echo 'checked' ?> />Nam
-                    <input type="radio" name="gioiTinh" value="nữ" <?php if (isset($_POST['gioiTinh']) && ($_POST['gioiTinh']) == "nữ") echo 'checked' ?> />Nữ
+                    <input type="radio" name="gioiTinh" value="nam" <?php if (isset($_POST['gioiTinh']) && $_POST['gioiTinh'] == "nam") echo 'checked' ?> />Nam
+                    <input type="radio" name="gioiTinh" value="nữ" <?php if (isset($_POST['gioiTinh']) && $_POST['gioiTinh'] == "nữ") echo 'checked' ?> />Nữ
                 </td>
             </tr>
             <tr>
@@ -261,9 +261,9 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Trình độ: </td>
                 <td>
-                    <input type="radio" name="trinhDo" value="cử nhân" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "cử nhân") echo 'checked' ?> /> Cử nhân
-                    <input type="radio" name="trinhDo" value="thạc sĩ" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "thạc sĩ") echo 'checked' ?> /> Thạc sĩ
-                    <input type="radio" name="trinhDo" value="tiến sĩ" <?php if (isset($_POST['trinhDo']) && ($_POST['trinhDo']) == "tiến sĩ") echo 'checked' ?> /> Tiến sĩ
+                    <input type="radio" name="trinhDo" value="cử nhân" <?php if (isset($_POST['trinhDo']) && $_POST['trinhDo'] == "cử nhân") echo 'checked' ?> /> Cử nhân
+                    <input type="radio" name="trinhDo" value="thạc sĩ" <?php if (isset($_POST['trinhDo']) && $_POST['trinhDo'] == "thạc sĩ") echo 'checked' ?> /> Thạc sĩ
+                    <input type="radio" name="trinhDo" value="tiến sĩ" <?php if (isset($_POST['trinhDo']) && $_POST['trinhDo'] == "tiến sĩ") echo 'checked' ?> /> Tiến sĩ
                 </td>
             </tr>
             <tr>
@@ -273,9 +273,9 @@ if (isset($_POST["showInfo"])) {
             <tr>
                 <td>Ngành học: </td>
                 <td>
-                    <input type="radio" name="nganhHoc" value="công nghệ thông tin" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "công nghệ thông tin") echo 'checked' ?> /> CNTT
-                    <input type="radio" name="nganhHoc" value="kinh tế" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "kinh tế") echo 'checked' ?> /> Kinh Tế
-                    <input type="radio" name="nganhHoc" value="ngành khác" <?php if (isset($_POST['nganhHoc']) && ($_POST['nganhHoc']) == "ngành khác") echo 'checked' ?> /> Ngành khác
+                    <input type="radio" name="nganhHoc" value="công nghệ thông tin" <?php if (isset($_POST['nganhHoc']) && $_POST['nganhHoc'] == "công nghệ thông tin") echo 'checked' ?> /> CNTT
+                    <input type="radio" name="nganhHoc" value="kinh tế" <?php if (isset($_POST['nganhHoc']) && $_POST['nganhHoc'] == "kinh tế") echo 'checked' ?> /> Kinh Tế
+                    <input type="radio" name="nganhHoc" value="ngành khác" <?php if (isset($_POST['nganhHoc']) && $_POST['nganhHoc'] == "ngành khác") echo 'checked' ?> /> Ngành khác
                 </td>
             </tr>
 
