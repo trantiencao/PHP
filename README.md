@@ -1,4 +1,4 @@
-<h><img style="float: left" src="NTU_logo.png" width="50" height="50"><center>THỰC HÀNH PHÁT TRIỂN PHẦN MỀM MÃ NGUỒN MỞ</center></h1>
+<h1><img style="float: left" src="NTU_logo.png" width="50" height="50"><center>THỰC HÀNH PHÁT TRIỂN PHẦN MỀM MÃ NGUỒN MỞ</center></h1>
 
 <h4>
 TRẦN TIẾN CAO - 59130151
